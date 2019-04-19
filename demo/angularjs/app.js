@@ -144,6 +144,16 @@ function AppDefaultConfig($locationProvider, $stateProvider, markedProvider) {
                 },
             },
         })
+        .state('app.link', {
+            url: 'link',
+            views: {
+                'main@': {
+                    controller: 'DemoLinkController',
+                    controllerAs: 'vm',
+                    template: require('./components/link/demo.html'),
+                },
+            },
+        })
         .state('app.list', {
             url: 'list',
             views: {
@@ -342,6 +352,7 @@ require('./components/dialog/controller.js');
 require('./components/dropdown/controller.js');
 require('./components/expansion-panel/controller.js');
 require('./components/lightbox/controller.js');
+require('./components/link/controller.js');
 require('./components/list/controller.js');
 require('./components/notification/controller.js');
 require('./components/progress-tracker/controller.js');
