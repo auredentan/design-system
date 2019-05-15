@@ -1,19 +1,30 @@
-<div class="p++">
-    <lumx-expansion-panel class="lumx-theme-background-dark-L6" lumx-is-open="vm.isOpen" lumx-is-draggable="true">
-        <lumx-expansion-panel-header>
-            <span class="lumx-typography-body1">Lorem ipsum</span>
-        </lumx-expansion-panel-header>
+<div
+    ng-class="{ 'lumx-theme-background-dark-L6': demoBlock.theme === 'light',
+                'lumx-theme-background-light-L6': demoBlock.theme === 'dark' }"
+>
+    <lumx-expansion-panel lumx-label="Lorem ipsum" lumx-theme="{{ demoBlock.theme }}">
+        <lumx-expansion-panel-drag-handle>
+            <lumx-drag-handle lumx-theme="{{ demoBlock.theme }}"></lumx-drag-handle>
+        </lumx-expansion-panel-drag-handle>
 
         <lumx-expansion-panel-content>
-            <p><br /></p>
-            <p><br /></p>
-            <p><br /></p>
-            <p><br /></p>
-            <p><br /></p>
+            <div class="p+ pt0">
+                <p
+                    class="lumx-typography-subtitle1"
+                    ng-class="{ 'lumx-theme-color-dark-N': demoBlock.theme === 'light',
+                                'lumx-theme-color-light-N': demoBlock.theme === 'dark' }"
+                >
+                    Curabitur est gravida et libero vitae dictum.
+                </p>
+
+                <p
+                    class="lumx-typography-body1"
+                    ng-class="{ 'lumx-theme-color-dark-L2': demoBlock.theme === 'light',
+                                'lumx-theme-color-light-L2': demoBlock.theme === 'dark' }"
+                >
+                    Etiam habebis sem dicantur magna mollis euismod.
+                </p>
+            </div>
         </lumx-expansion-panel-content>
-
-        <lumx-expansion-panel-footer> </lumx-expansion-panel-footer>
     </lumx-expansion-panel>
-
-    <!-- <lumx-button class="ml+ mb+" ng-click="vm.isOpen = !vm.isOpen">Toggle</lumx-button> -->
 </div>
