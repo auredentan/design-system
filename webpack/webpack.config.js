@@ -62,12 +62,19 @@ const baseConfig = {
             {
                 exclude: [/node_modules/u, /\.(test|spec)\.tsx?/u, /testing/u],
                 test: /\.tsx?$/u,
-                loader: 'awesome-typescript-loader',
-                options: {
-                    reportFiles: ['**/*.(!test|spec).(ts|tsx)'],
-                    silent: true,
-                    useCache: true,
-                },
+                use: [
+                    {
+                        loader: 'awesome-typescript-loader',
+                        options: {
+                            reportFiles: ['**/*.(!test|spec).(ts|tsx)'],
+                            silent: true,
+                            useCache: true,
+                        },
+                    },
+                    {
+                        loader: 'react-docgen-typescript-loader',
+                    },
+                ],
             },
             {
                 test: /\.(png|svg|jpg|gif|woff(2)?|ttf|eot|svg)$/,
