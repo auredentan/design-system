@@ -244,6 +244,16 @@ function AppDefaultConfig($locationProvider, $stateProvider, markedProvider) {
                 },
             },
         })
+        .state('app.slider', {
+            url: 'slider',
+            views: {
+                'main@': {
+                    controller: 'DemoSliderController',
+                    controllerAs: 'vm',
+                    template: require('./components/slider/demo.html'),
+                },
+            },
+        })
         .state('app.slideshow', {
             url: 'slideshow',
             views: {
@@ -394,6 +404,7 @@ require('./components/progress-tracker/controller.js');
 require('./components/radio-button/controller.js');
 require('./components/select/controller.js');
 require('./components/side-navigation/controller.js');
+require('./components/slider/controller.js');
 require('./components/slideshow/controller.js');
 require('./components/switch/controller.js');
 require('./components/table/controller.js');
