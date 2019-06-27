@@ -9,7 +9,7 @@
     "red": 1
   },
   "booleanOperation": -1,
-  "changeIdentifier": 239,
+  "changeIdentifier": 265,
   "clippingMaskMode": 0,
   "do_objectID": "BF6D4184-0E3F-449B-8A1F-15E660C21A2D",
   "exportOptions": {
@@ -33,7 +33,7 @@
     "_class": "MSImmutableFreeformGroupLayout"
   },
   "hasBackgroundColor": false,
-  "hasClickThrough": false,
+  "hasClickThrough": true,
   "hasClippingMask": false,
   "horizontalRulerData": {
     "_class": "rulerData",
@@ -53,8 +53,8 @@
   "layerListExpandedType": 2,
   "layers": [
     {
-      "class": "symbolInstance",
-      "id": "3D5F4677-B906-4DC9-877C-69D0826EA8E6"
+      "class": "oval",
+      "id": "F428EC1E-603D-45C8-9560-75401A473D71"
     }
   ],
   "name": "avatar/m (36)",
@@ -63,7 +63,7 @@
     {
       "_class": "MSImmutableOverrideProperty",
       "canOverride": true,
-      "overrideName": "3D5F4677-B906-4DC9-877C-69D0826EA8E6_symbolID"
+      "overrideName": "F428EC1E-603D-45C8-9560-75401A473D71_image"
     }
   ],
   "resizesContent": false,

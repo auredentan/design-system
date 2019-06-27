@@ -10,7 +10,7 @@
     "red": 1
   },
   "booleanOperation": -1,
-  "changeIdentifier": 261,
+  "changeIdentifier": 317,
   "clippingMaskMode": 0,
   "do_objectID": "8B2406FE-392E-4B78-8294-2D75355793B9",
   "exportOptions": {
@@ -37,7 +37,7 @@
     "do_objectID": "8F4143DD-FB9A-4A22-8E2C-4A130BF0E37F"
   },
   "hasBackgroundColor": false,
-  "hasClickThrough": false,
+  "hasClickThrough": true,
   "hasClippingMask": false,
   "horizontalRulerData": {
     "_class": "rulerData",
@@ -58,8 +58,8 @@
   "layerListExpandedType": 2,
   "layers": [
     {
-      "class": "symbolInstance",
-      "id": "79A99E71-8208-440A-AC7E-160A9F9C5004"
+      "class": "oval",
+      "id": "1810AAAB-ABA5-4EE0-BAAB-F74F0C28E490"
     }
   ],
   "name": "avatar/s (24)",

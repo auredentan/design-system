@@ -9,7 +9,7 @@
     "red": 1
   },
   "booleanOperation": -1,
-  "changeIdentifier": 135,
+  "changeIdentifier": 185,
   "clippingMaskMode": 0,
   "do_objectID": "4EFB9F7C-7F7D-4FF4-ABC7-F82AB4DF53E3",
   "exportOptions": {
@@ -33,7 +33,7 @@
     "_class": "MSImmutableFreeformGroupLayout"
   },
   "hasBackgroundColor": false,
-  "hasClickThrough": false,
+  "hasClickThrough": true,
   "hasClippingMask": false,
   "horizontalRulerData": {
     "_class": "rulerData",
@@ -53,8 +53,8 @@
   "layerListExpandedType": 2,
   "layers": [
     {
-      "class": "symbolInstance",
-      "id": "37878EED-680B-4259-90DB-A26ABC359EB8"
+      "class": "oval",
+      "id": "C9E0922A-018F-427E-A110-2D0DB2EAC9B9"
     }
   ],
   "name": "avatar/xs (20)",
