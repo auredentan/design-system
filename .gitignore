@@ -15,3 +15,7 @@ jest/reports/
 coverage
 design_system.xpr
 design_system.ditamap
+
+
+# Ignore sketch files
+*.sketch
