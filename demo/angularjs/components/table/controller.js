@@ -93,22 +93,22 @@ function DemoTableController($filter) {
     /////////////////////////////
 
     /**
-     * Select a row in the table.
+     * Activate a row in the table.
      *
-     * @param {Object} rowToSelect The row to select.
+     * @param {Object} rowToActivate The row to activate.
      */
-    function selectRow(rowToSelect) {
-        if (rowToSelect.isSelected) {
-            rowToSelect.isSelected = false;
+    function activateRow(rowToActivate) {
+        if (rowToActivate.isActive) {
+            rowToActivate.isActive = false;
 
             return;
         }
 
         angular.forEach(vm.tableBody, (row) => {
-            row.isSelected = false;
+            row.isActive = false;
         });
 
-        rowToSelect.isSelected = true;
+        rowToActivate.isActive = true;
     }
 
     /**
@@ -138,7 +138,7 @@ function DemoTableController($filter) {
 
     /////////////////////////////
 
-    vm.selectRow = selectRow;
+    vm.activateRow = activateRow;
     vm.updateSort = updateSort;
 }
 

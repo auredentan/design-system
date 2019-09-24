@@ -18,9 +18,9 @@
 
     <lumx-table-body>
         <lumx-table-row
-            lumx-is-selected="row.isSelected"
+            lumx-is-active="row.isActive"
             ng-repeat="row in vm.tableBody"
-            ng-click="vm.selectRow(row)"
+            ng-click="vm.activateRow(row)"
             lumx-enter-keypress="vm.selectRow(row)"
         >
             <lumx-table-cell-body>

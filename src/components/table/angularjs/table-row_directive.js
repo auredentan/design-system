@@ -45,6 +45,7 @@ function TableRowDirective() {
         require: [`${COMPONENT_PREFIX}TableRow`, `^${COMPONENT_PREFIX}Table`, `?^${COMPONENT_PREFIX}TableBody`],
         restrict: 'E',
         scope: {
+            isActive: '=?lumxIsActive',
             isSelected: '=?lumxIsSelected',
         },
         template,
