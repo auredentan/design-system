@@ -1,4 +1,4 @@
-import React, { ReactElement, RefObject, useState } from 'react';
+import React, { ReactElement, ReactNode, RefObject, useState } from 'react';
 
 import classNames from 'classnames';
 import get from 'lodash/get';
@@ -22,6 +22,12 @@ enum TextFieldType {
  * Defines the props of the component.
  */
 interface ITextFieldProps extends IGenericProps {
+    /** A component to be rendered after the main text input. */
+    after?: HTMLElement | ReactNode;
+
+    /** A component to be rendered before the main text input */
+    before?: HTMLElement | ReactNode;
+
     /** Whether the text field is displayed with error style or not. */
     hasError?: boolean;
 
@@ -49,12 +55,6 @@ interface ITextFieldProps extends IGenericProps {
     /** Theme. */
     theme?: Theme;
 
-    /** A ref that will be passed to the wrapper element. */
-    textFieldRef?: RefObject<HTMLDivElement>;
-
-    /** A ref that will be passed to the input or text area element. */
-    inputRef?: RefObject<HTMLInputElement> | RefObject<HTMLTextAreaElement>;
-
     /** Whether custom colors are applied to this component. */
     useCustomColors?: boolean;
 
@@ -66,6 +66,12 @@ interface ITextFieldProps extends IGenericProps {
 
     /** Text field type (input or textarea). */
     type?: TextFieldType;
+
+    /** A ref that will be passed to the wrapper element. */
+    textFieldRef?: RefObject<HTMLDivElement>;
+
+    /** A ref that will be passed to the input or text area element. */
+    inputRef?: RefObject<HTMLInputElement> | RefObject<HTMLTextAreaElement>;
 
     /** Text field value change handler. */
     onChange(value: string): void;
@@ -255,6 +261,8 @@ const renderInputNative = (props: IInputNativeProps): ReactElement => {
  */
 const TextField: React.FC<TextFieldProps> = (props: TextFieldProps): ReactElement => {
     const {
+        after,
+        before,
         className = '',
         hasError,
         helper,
@@ -311,6 +319,8 @@ const TextField: React.FC<TextFieldProps> = (props: TextFieldProps): ReactElemen
             {helper && <span className={`${CLASSNAME}__helper`}>{helper}</span>}
 
             <div className={`${CLASSNAME}__input-wrapper`}>
+                {before}
+
                 {icon && (
                     <Icon
                         className={`${CLASSNAME}__input-icon`}
@@ -346,6 +356,8 @@ const TextField: React.FC<TextFieldProps> = (props: TextFieldProps): ReactElemen
                         size={Size.xs}
                     />
                 )}
+
+                {after}
             </div>
         </div>
     );
