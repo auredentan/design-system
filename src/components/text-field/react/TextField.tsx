@@ -59,7 +59,7 @@ interface ITextFieldProps extends IGenericProps {
     useCustomColors?: boolean;
 
     /** Minimum rows to be displayed in a text area. */
-    minimumRows: number;
+    minimumRows?: number;
 
     /** Text field value. */
     value: string;
