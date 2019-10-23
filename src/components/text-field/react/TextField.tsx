@@ -59,7 +59,7 @@ interface ITextFieldProps extends IGenericProps {
     useCustomColors?: boolean;
 
     /** Minimum rows to be displayed in a text area. */
-    minimumRows?: number;
+    minimumRows: number;
 
     /** Text field value. */
     value: string;
@@ -114,11 +114,11 @@ const DEFAULT_PROPS: Partial<TextFieldProps> = {
 };
 /**
  * Hook that allows to calculate the number of rows needed for a text area.
- * @param minimumNumberOfRows Minimum number of rows that we want to display.
+ * @param minimumRows Minimum number of rows that we want to display.
  * @return rows to be used and a callback to recalculate
  */
 const useComputeNumberOfRows = (
-    minimumNumberOfRows: number | undefined = MIN_ROWS,
+    minimumRows: number,
 ): {
     /** number of rows to be used on the text area */
     rows: number;
@@ -128,7 +128,7 @@ const useComputeNumberOfRows = (
      */
     recomputeNumberOfRows(event: React.ChangeEvent): void;
 } => {
-    const [rows, setRows] = useState(minimumNumberOfRows);
+    const [rows, setRows] = useState(minimumRows);
 
     const recompute = (event: React.ChangeEvent): void => {
         /**
@@ -145,8 +145,8 @@ const useComputeNumberOfRows = (
          * 5. In case there is any other update on the component that changes the UI, we need to keep the number of rows
          * on the state in order to allow React to re-render. Therefore, we save them using `useState`
          */
-        (event.target as HTMLTextAreaElement).rows = minimumNumberOfRows;
-        const currentRows = event.target.scrollHeight / (event.target.clientHeight / minimumNumberOfRows);
+        (event.target as HTMLTextAreaElement).rows = minimumRows;
+        const currentRows = event.target.scrollHeight / (event.target.clientHeight / minimumRows);
         (event.target as HTMLTextAreaElement).rows = currentRows;
 
         setRows(currentRows);
@@ -268,7 +268,7 @@ const TextField: React.FC<TextFieldProps> = (props: TextFieldProps): ReactElemen
         onBlur,
         placeholder,
         textFieldRef,
-        minimumRows = DEFAULT_PROPS.minimumRows,
+        minimumRows = DEFAULT_PROPS.minimumRows as number,
         inputRef = React.useRef(null),
         theme = DEFAULT_PROPS.theme,
         type = DEFAULT_PROPS.type,
