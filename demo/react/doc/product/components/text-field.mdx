@@ -80,6 +80,22 @@ There are five options: _helper text_, _placeholder_, _icon_, _is clearable_ and
 };
 ```
 
+### Character counter
+
+```javascript jsx withThemeSwitcher disableGrid
+(theme) => {
+    const [value, setValue] = useState('Valid value');
+    return <TextField
+        label="Textfield label"
+        value={value}
+        onChange={setValue}
+        hasError={value.length === 150}
+        maxLength="150"
+        theme={theme}
+    />;
+};
+```
+
 ### Icon
 
 ```javascript jsx withThemeSwitcher disableGrid
