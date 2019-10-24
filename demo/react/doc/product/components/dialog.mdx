@@ -1,6 +1,6 @@
 ```javascript import
 import { useCallback, useMemo, useRef, useState } from 'react';
-import { Alignment, Dialog, Grid, GridItem, Theme, Button, Toolbar, ButtonEmphasis, Size, Orientation } from 'LumX';
+import { Alignment, Dialog, Dropdown, List, ListItem, Placement, Grid, GridItem, Theme, Button, Toolbar, ButtonEmphasis, Size, Orientation } from 'LumX';
 ```
 
 # Dialog 
@@ -11,9 +11,9 @@ Dialogs have a title, a body, and at least one or more buttons.
 ```javascript jsx withThemeSwitcher
 (theme) => {
     const [isOpened, setIsOpened] = useState(false);
-
+    const [isDDOpened, setIsDDOpened] = useState(false);
     const triggerElement = useRef(null);
-
+    const triggerDDElement = useRef(null);
     const onOpenModal = useCallback(() => {
         // Do something.
     }, []);
@@ -30,6 +30,29 @@ Dialogs have a title, a body, and at least one or more buttons.
     const footerBtns = useMemo(
         () => (
             <>
+            <Button
+                buttonRef={triggerDDElement}
+                onClick={() => setIsDDOpened(!isDDOpened)}
+            >
+               Drop
+            </Button>
+            <Dropdown root={triggerDDElement.current ? triggerDDElement.current : undefined} placement={Placement.TOP} anchorRef={triggerDDElement} showDropdown={isDDOpened} onClose={() => setIsDDOpened(false)}>
+                <List isClickable={isDDOpened}>
+                    {['en', 'fr', 'dey'].map((lang) => (
+                        <ListItem
+                            key={lang}
+                            isClickable
+                            onClick={(evt) => {
+                                evt.stopPropagation();
+                                console.log(lang);
+                                setIsDDOpened(false);
+                            }}
+                        >
+                            {lang}
+                        </ListItem>
+                    ))}
+                </List>
+            </Dropdown>
                 <Button emphasis={ButtonEmphasis.medium} onClick={onCloseModal}>
                     Cancel
                 </Button>
@@ -38,7 +61,7 @@ Dialogs have a title, a body, and at least one or more buttons.
                 </Button>
             </>
         ),
-        [],
+        [isDDOpened, triggerDDElement],
     );
 
     return (

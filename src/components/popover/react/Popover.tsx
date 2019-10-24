@@ -129,6 +129,7 @@ const Popover: React.FC<PopoverProps> & IPopover = ({
     className = DEFAULT_PROPS.className,
     elevation = DEFAULT_PROPS.elevation,
     isVisible,
+    root = document.body,
     ...props
 }: PopoverProps): ReactElement => {
     const cssPopover: CSSProperties = {
@@ -152,7 +153,7 @@ const Popover: React.FC<PopoverProps> & IPopover = ({
         >
             <div className={`${CLASSNAME}__wrapper`}>{children}</div>
         </div>,
-        document.body,
+        root,
     );
 };
 Popover.displayName = COMPONENT_NAME;

@@ -92,6 +92,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     placement = DEFAULT_PROPS.placement,
     fitToAnchorWidth = DEFAULT_PROPS.fitToAnchorWidth,
     onInfiniteScroll,
+    root,
     ...props
 }: DropdownProps): React.ReactElement => {
     const wrapperRef: React.RefObject<HTMLDivElement> = useRef(null);
@@ -154,6 +155,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 
     return (
         <Popover
+            root={root}
             popoverRect={computedPosition}
             popoverRef={popoverRef}
             isVisible={isVisible}
