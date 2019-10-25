@@ -42,6 +42,12 @@ interface IAutocompleteProps extends IGenericProps {
     hasError?: boolean;
 
     /**
+     * Whether the text field displays a clear button or not.
+     * @see {@link TextFieldProps#hasError}
+     */
+    isClearable?: boolean;
+
+    /**
      * Text field helper message.
      * @see {@link TextFieldProps#helper}
      */
@@ -91,6 +97,11 @@ interface IAutocompleteProps extends IGenericProps {
      * suggestions that
      */
     children: React.ReactNode;
+
+    /**
+     * List of chips to be displayed before the text field input.
+     */
+    chips?: React.ReactNode;
 
     /**
      * Text field value.
@@ -187,6 +198,7 @@ const Autocomplete: React.FC<AutocompleteProps> = (props: AutocompleteProps): Re
     const {
         className,
         children,
+        chips,
         value,
         onBlur,
         onChange,
@@ -198,6 +210,7 @@ const Autocomplete: React.FC<AutocompleteProps> = (props: AutocompleteProps): Re
         helper,
         icon,
         isDisabled,
+        isClearable,
         isValid,
         label,
         placeholder,
@@ -227,8 +240,10 @@ const Autocomplete: React.FC<AutocompleteProps> = (props: AutocompleteProps): Re
             <TextField
                 value={value}
                 onChange={onChange}
+                chips={chips}
                 textFieldRef={textFieldRef}
                 inputRef={inputRef}
+                isClearable={isClearable}
                 onBlur={onBlur}
                 onFocus={onFocus}
                 hasError={hasError}
