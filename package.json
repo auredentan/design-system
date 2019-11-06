@@ -91,6 +91,7 @@
         "babel-jest": "^24.9.0",
         "babel-loader": "^8.0.6",
         "babel-plugin-angularjs-annotate": "^0.10.0",
+        "babel-plugin-lodash": "^3.3.4",
         "babel-plugin-dynamic-import-node": "^2.3.0",
         "babel-plugin-smart-webpack-import": "^1.5.1",
         "changelog-verify": "^1.1.2",
