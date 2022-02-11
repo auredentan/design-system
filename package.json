@@ -142,7 +142,7 @@
         "lint-staged": "^8.2.1",
         "lumapps-conventional-changelog": "git+https://git@github.com/lumapps/lumapps-conventional-changelog#master",
         "lumapps-conventional-commit-types": "git+https://git@github.com/lumapps/lumapps-conventional-commit-types#master",
-        "node-sass": "^4.12.0",
+        "node-sass": "^7.0.0",
         "nodemon": "^1.19.3",
         "optimize-css-assets-webpack-plugin": "^5.0.3",
         "patch-package": "^6.2.0",
